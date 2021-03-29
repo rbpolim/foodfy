@@ -1,0 +1,48 @@
+.container-users {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container-users .user h1 {
+  padding: 0 0 4px 0;
+  font-size: 16px;
+}
+
+.container-users .user p {
+  font-size: 12px;
+  color: #666;
+}
+
+.container-users .user .user-buttons {
+  display: flex;
+  margin-top: 8px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container-users .user .user-buttons a {
+  color:#5c0aff;
+  font-size: 12px;
+}
+
+form button.remove {
+  margin-left: 12px;
+  font-size: 12px;
+  color: red;
+  background: none;
+  border: none;
+}
+
+.button.input.radio {
+  width: 120px;
+}
+
+
+.input.radio span {
+  display: flex;
+  align-items: center;
+}
+
+.input.radio span input[type='radio'] {
+  width: 21px;
+}

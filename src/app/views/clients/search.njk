@@ -1,0 +1,23 @@
+{% extends "layout-client.njk" %}
+
+{% block head %}
+  <title>Receitas</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Buscando por "{{ filter }}"</h1>
+
+    <div class="container-cards">
+      {% for recipe in recipes %}
+        <div class="card" id="{{recipe.id}}">
+          <img src="{{recipe.img}}" alt="{{recipe.title}}">
+          <h2>{{recipe.title}}</h2>
+          <p>por {{recipe.chef_name}}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script src="/getcards.js"></script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout-client.njk" %}
+
+{% block content %}
+  <div class="container">
+    <div class="logo">
+      <h1>As melhores receitas</h1>
+      <h2>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro</h2>
+
+      <img src="/assets/chef.png" alt="Logo Chef">
+    </div>
+
+    <h1>Mais acessadas</h1>
+
+    <div class="container-cards">
+      {% for recipe in recipes %}
+        <div class="card" id="{{recipe.id}}">
+          <img src="{{recipe.img}}" alt="{{recipe.title}}">
+          <h2>{{recipe.title}}</h2>
+          <p>por {{recipe.chef_name}}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script src="/getcards.js"></script>
+{% endblock  %}

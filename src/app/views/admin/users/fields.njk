@@ -1,0 +1,29 @@
+<div class="item">
+  <div>Nome</div>
+  <div class="input">
+    <input type="text" name="name" value="{{ user.name }}">
+  </div>
+</div>
+
+<div class="item">
+  <div>Email</div>
+  <div class="input">
+    <input type="email" name="email" value="{{ user.email }}">
+  </div>
+</div>
+
+<div class="item radio">
+  <div class="button input radio">
+    <span>
+      <input
+        type="radio"
+        name="is_admin"
+        value="{{ true }}"
+        {% if user.is_admin === true %}
+          checked
+        {% endif %}
+      >
+      Administrador
+    </span>
+  </div>
+</div>

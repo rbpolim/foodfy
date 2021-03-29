@@ -1,0 +1,21 @@
+{% extends "layout-admin.njk" %}
+
+{% block content %}
+
+<div class="container">
+  <form class="edit-user form" method="POST" action="/admin/users?_method=PUT">
+
+    <div class="container-title">
+      <h1>Atualizar Usuário</h1>
+      <button class="button" type="submit">Salvar</button>
+    </div>
+
+    <div class="fields profile">
+      {% include "admin/users/fields.njk" %}
+    </div>
+
+    <input type="hidden" name="id" value={{user.id}}>
+  </form>
+</div>
+
+{% endblock %}

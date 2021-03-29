@@ -1,0 +1,79 @@
+{% extends "layout-client.njk" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="recipe-header client" id="{{recipe.id}}">
+    <div class="recipe-header-title">
+      <h1>Receita {{recipe.title}}</h1>
+    </div>
+
+    <div class="gallery">
+      <div class="highlight">
+        <img src="{{files[0].src}}" alt="Imagem principal do produto">
+      </div>
+
+      <div class="previews">
+        {% for image in files %}
+        <img src="{{image.src}}" alt="Imagens do produto" {% if loop.index0==0 %} class="active" {% endif %}
+          onclick="ImageGallery.setImage(event)">
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="recipe-header-description">
+      <h2>{{recipe.title}}</h2>
+      <p>por {{recipe.chef_name}}</p>
+    </div>
+  </div>
+
+  <div class="recipe-description">
+    <div class="description ingredients">
+      <div class="header-recipe">
+        <strong>Ingredientes</strong>
+        <button class="button hide-show" onclick="ShowAndHide.ingredients()">
+          Mostrar ou Esconder
+        </button>
+      </div>
+
+      <ul id="ingredients">
+        {% for ingredient in recipe.ingredients %}
+        <li>{{ ingredient }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="description prepare">
+      <div class="header-recipe">
+        <strong>Modo de preparação</strong>
+        <button class="button hide-show" onclick="ShowAndHide.prepare()">
+          Mostrar ou Esconder
+        </button>
+      </div>
+
+      <ul id="prepare">
+        {% for prepare in recipe.preparation %}
+          <li>{{ prepare }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="description plus">
+      <div class="header-recipe">
+        <strong>Informações adicionais</strong>
+        <button class="button hide-show" onclick="ShowAndHide.plus()">
+          Mostrar ou Esconder
+        </button>
+      </div>
+
+      <div id="plus">
+        <p>{{recipe.information}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/image-gallery.js"></script>
+<script src="/showhide.js"></script>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layout-admin.njk" %}
+
+{% block content %}
+
+<div class="container">
+
+  <form class="recipe form" action="/admin/recipes" method="post" enctype="multipart/form-data">
+
+    <div class="container-title">
+      <h1>Criando receita</h1>
+      <button class="button" type="submit">Salvar receita</button>
+    </div>
+
+    <div class="container-upload-img create-recipe">
+      <strong>Imagens da receita</strong>
+      <div class="img-recipes">
+        <div id="photos-upload">
+          <input id="photos-input" type="file" name="photos" multiple accept="image/*"
+            onchange="PhotosUpload.handleFileInput(event)">
+          <i class="material-icons">add</i>
+        </div>
+
+        <div id="photos-preview"></div>
+      </div>
+    </div>
+
+    <div class="fields create-recipe">
+      <div class="item">
+        <div>Autor</div>
+        <select name="chef">
+          {% for chef in chefOptions %}
+          <option value="{{ chef.id }}">
+            {{ chef.name }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="item">
+        <div>Receita</div>
+        <div class="input">
+          <input type="text" name="title" placeholder="Nome da receita">
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Ingredientes</div>
+        <div id="ingredients">
+          <div class="ingredient">
+            <input type="text" name="ingredients[]">
+          </div>
+        </div>
+        <button type="button" class="button add add-ingredient">Adicionar novo ingrediente</button>
+      </div>
+
+      <div class="item">
+        <div>Modo de preparo</div>
+        <div id="preparation">
+          <div class="preparation">
+            <input type="text" name="preparation[]">
+          </div>
+        </div>
+        <button type="button" class="button add add-prepare">Adicionar novo passo</button>
+      </div>
+
+      <div class="item">
+        <div>Informações Adicionais</div>
+        <textarea name="information" id="" cols="30" rows="10"></textarea>
+      </div>
+    </div>
+
+    <script src="/photosupload.js"></script>
+    <script src="/addFeatured.js"></script>
+  </form>
+</div>
+
+{% endblock %}

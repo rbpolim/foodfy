@@ -1,0 +1,61 @@
+{% extends "layout-admin.njk" %}
+
+{% block content %}
+
+<div class="container">
+  <form class="delete-chef form" action="/admin/chefs?_method=DELETE" method="post">
+    <div class="container-title delete-chef">
+      <h1>Editando chef</h1>
+      <button class="button delete" type="submit">Deletar</button>
+    </div>
+
+    <input type="hidden" name="id" value="{{ chef.id }}">
+  </form>
+
+  <form class="edit-chef form" action="/admin/chefs?_method=PUT" method="post" enctype="multipart/form-data">
+    <div class="container-title edit-chef">
+      <button class="button save" type="submit">Salvar</button>
+    </div>
+
+    <div class="fields edit-chef">
+      <div class="item">
+        <div>Nome</div>
+        <div class="input">
+          <input type="text" name="name" value="{{ chef.name }}">
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Avatar</div>
+        <div class="input">
+          <input type="text" name="avatar_url" value="{{ avatar.path }}">
+        </div>
+      </div>
+
+      <div class="img-recipes">
+        <div id="photos-upload">
+          <input id="photos-input" type="file" name="photos" accept="image/*"
+            onchange="PhotosUpload.handleFileChefInput(event)">
+          <p class="button">Enviar Avatar</p>
+        </div>
+      </div>
+
+      <input type="hidden" name="old_file_id" value="{{ avatar.file_id }}">
+
+      <input type="hidden" name="id" value="{{ chef.id }}">
+    </div>
+  </form>
+
+  <script>
+    const formDelete = document.querySelector('.delete-chef.form');
+    formDelete.addEventListener('submit', function(event) {
+      const confirmation = confirm('Tem certeza que deseja excluir esta conta? Essa ação não poderá ser desfeita.')
+
+      if (!confirmation) {
+        event.preventDefault();
+      }
+    })
+  </script>
+</div>
+
+{% endblock %}

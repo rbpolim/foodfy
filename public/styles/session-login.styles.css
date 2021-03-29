@@ -1,0 +1,221 @@
+.logo-login {
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-login img {
+  height: max-content;
+}
+
+form.login.form,
+form.reset-password.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form.login.form .header {
+  text-align: center;
+  margin-top: 50px;
+}
+
+form.login.form .header h3 {
+  font-size: 21px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.fields.session {
+  width: 60%;
+}
+
+.fields.profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.fields.profile .item {
+  width: 400px;
+}
+
+.fields.create-chef {
+  display: flex;
+}
+
+.container-upload-img.recipe{
+  margin-top: -28px;
+}
+
+.container-upload-img.create-recipe {
+  margin-top: 21px;
+}
+.container-upload-img > strong {
+  color: #666;
+  font-size: 14px;
+}
+
+.fields.create-recipe,
+.fields.edit-recipe {
+  margin-top: 8px;
+}
+
+.fields.create-recipe select,
+.fields.edit-recipe select {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.fields.create-recipe .item button,
+.fields.edit-recipe .item button {
+  margin-top: 8px;
+}
+
+.fields.create-recipe .item textarea {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 60px;
+}
+
+.input-plus-recipe input {
+margin-bottom: 150px;
+}
+
+.fields.edit-recipe .item:last-child input {
+  margin-bottom: 150px;
+}
+
+.fields .item {
+  width: 100%;
+  padding: 6px;
+  margin-top: 12px;
+}
+
+.item.radio {
+  display: flex;
+}
+
+.fields input {
+  width: 100%;
+  margin-top: 6px;
+}
+
+.fields input {
+  width: 100%;
+  margin-top: 6px;
+}
+
+.footer {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 465px;
+}
+
+.footer a {
+  font-size: 14px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* UPLOAD IMAGES CHEF CREATE */
+
+#photos-upload {
+  position: relative;
+
+  display: block;
+  overflow: hidden;
+
+  width: 195px;
+  margin-top: 8px;
+}
+
+#photos-input {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  display: block;
+
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.img-recipes {
+  display: flex;
+  flex-direction: row;
+}
+
+#photos-preview {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+  width: 100%;
+
+  margin-top: 8px;
+}
+
+#photos-preview img {
+    width: 100%;
+    height: 150px;
+    max-height: 95%;
+    border-radius: 4px;
+
+    object-fit: cover;
+}
+
+/* === ADD MATERIAL ICONS === */
+#photos-preview .photo {
+  position: relative;
+}
+
+#photos-preview .photo i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Essas 3 linhas, faz com que o ícone centralizado ao meio  */
+  align-items: center;
+  justify-content: center;
+  font-size: 300%;
+  cursor: pointer;
+  transition: opacity 300ms;
+  opacity: 0;
+}
+
+#photos-preview .photo:hover i {
+  opacity: 1;
+}
+
+#photos-upload i {
+  color: #DDDDDD;
+
+  width: 150px;
+  height: 150px;
+  border: 1px solid #DDDDDD;
+  background: #FFFFFF;
+  border-radius: 4px;
+
+  font-size: 300%;
+  cursor: pointer;
+  box-shadow: 0 2px 2px -6px #333;
+
+  display: flex; /* Essas 3 linhas, faz com que o ícone centralizado ao meio  */
+  align-items: center;
+  justify-content: center;
+}

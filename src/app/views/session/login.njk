@@ -1,0 +1,26 @@
+{% extends "layout-session.njk" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="logo-login">
+    <img src="/assets/logo.png" alt="Logomarca">
+  </div>
+
+  <form class="login form" action="/admin/login" method="post">
+    <div class="header">
+      <h3>Iniciar Sessão</h2>
+    </div>
+
+    <div class="fields session">
+      {% include "session/fields.njk" %}
+    </div>
+
+    <div class="footer">
+      <a href="/admin/forgot-password">Perdeu a senha?</a>
+      <button class="button" type="submit">Acessar</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

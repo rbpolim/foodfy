@@ -1,0 +1,23 @@
+<header class="header-client">
+  <img src="/assets/logo.png" alt="Logomarca">
+  <div class="link_menu">
+    <a href="/">Home</a>
+    <a href="/about">Sobre</a>
+    <a href="/recipes">Receitas</a>
+    <a href="/chefs">Chefs</a>
+
+    <a href="/admin/users">Minha conta</a>
+  </div>
+
+  <form class="search" action="/search" method="get">
+    <input
+      type="text"
+      name="filter"
+      value="{{ filter }}"
+      Placeholder="Buscar uma receita"
+    >
+
+    <button class="button filter" type="submit">Buscar</button>
+  </form>
+</header>
+
