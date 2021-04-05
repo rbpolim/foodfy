@@ -36,6 +36,9 @@ Este projeto foi desenvolvido com:
 - Node.JS
 - NodeMailer
 - Express
+- Express Session
+- Multer
+- BcryptJS
 - PostgreSQL
 
 ## 💽 **Instalação**
