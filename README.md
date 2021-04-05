@@ -3,20 +3,21 @@
 </h1>
 
 
-##💡**Sobre o projeto**
+## 💡**Sobre o projeto**
 Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nunjucks e PostgreSQL**. Possui as funcionalidades de explorar, pesquisar e gerenciar receitas, chefs e usuários, além de contar com um sistema completo de login e recuperação de senha.
 
 
-##📑**Funcionalidades**
+## 📑**Funcionalidades**
+
 - Create an account to users.
 - Create, edit and delete your recipes and chefs.
 - Explore recipes and chefs.
 - As an administrator, you can to invite other users.
 
-##🎥 Video Walktrough
+## 🎥 Video Walktrough
 <!-- ![launchstore1](https://user-images.githubusercontent.com/66570560/95655291-88d9f380-0adc-11eb-9803-6569e7864315.gif) -->
 
-##🔧 **Tecnologias**
+## 🔧 **Tecnologias**
 Este projeto foi desenvolvido com:
 
 ###Frontend:
@@ -33,12 +34,17 @@ Este projeto foi desenvolvido com:
 - Express
 - PostgreSQL
 
-##💽 **Installers**
-If you want to instal:
+## 💽 **Como utilizar?**
+
+Para clonar o Foodfy é necessário você ter instalado Node.js, Git e PostgreSQL.
+
 ```
-# Install
+# Clone este repositório:
+$ git clone https://github.com/rbpolim/foodfy.git
+
+# Instalação das dependências:
 $ npm install
 
-# Run launchstore
+# Rodar aplicação:
 $ npm start
 ```
