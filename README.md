@@ -3,11 +3,11 @@
 </h1>
 
 
-## 💡**Sobre o projeto**
+## 💡 **Sobre o projeto**
 Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nunjucks e PostgreSQL**. Possui as funcionalidades de explorar, pesquisar e gerenciar receitas, chefs e usuários, além de contar com um sistema completo de login e recuperação de senha.
 
 
-## 📑**Funcionalidades**
+## 📑 **Funcionalidades**
 
 - Create an account to users.
 - Create, edit and delete your recipes and chefs.
@@ -20,14 +20,14 @@ Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nun
 ## 🔧 **Tecnologias**
 Este projeto foi desenvolvido com:
 
-###Frontend:
+### Frontend:
 
 - HTML
 - CSS
 - Javascript
 - Nunjucks
 
-###Backend:
+### Backend:
 
 - Node.JS
 - NodeMailer
