@@ -1,4 +1,4 @@
-![foofdy-home](https://user-images.githubusercontent.com/66570560/114211045-8abf2b00-9936-11eb-87ab-2fa21cebe72b.png)
+![logo-foodfy-chef](https://user-images.githubusercontent.com/66570560/114239633-b2c18500-995c-11eb-89e7-07998cb0b393.png)
 
 ## 💡 **Sobre o projeto**
 Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nunjucks e PostgreSQL**. 
@@ -16,6 +16,7 @@ Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nun
 - Área administrativa para cada usuário cadastrado;
 
 ## 🎥 Video Walktrough
+<strong align="center">CLIENT WEB</strong>
 ![foodfy-video-client-edited-mp4](https://user-images.githubusercontent.com/66570560/114238132-83117d80-995a-11eb-8334-c82b1784fa44.gif)
 
 ## 🔧 **Tecnologias**
