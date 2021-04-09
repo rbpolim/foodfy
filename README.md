@@ -16,7 +16,7 @@ Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nun
 - Área administrativa para cada usuário cadastrado;
 
 ## 🎥 Video Walktrough
-<!-- ![launchstore1](https://user-images.githubusercontent.com/66570560/95655291-88d9f380-0adc-11eb-9803-6569e7864315.gif) -->
+![foodfy-video-client-edited-mp4](https://user-images.githubusercontent.com/66570560/114238132-83117d80-995a-11eb-8334-c82b1784fa44.gif)
 
 ## 🔧 **Tecnologias**
 Este projeto foi desenvolvido com:
