@@ -1,8 +1,9 @@
 ![foofdy-home](https://user-images.githubusercontent.com/66570560/114211045-8abf2b00-9936-11eb-87ab-2fa21cebe72b.png)
 
 ## 💡 **Sobre o projeto**
-Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nunjucks e PostgreSQL**. Possui as funcionalidades de explorar, pesquisar e gerenciar receitas, chefs e usuários, além de contar com um sistema completo de login e recuperação de senha.
-Esta aplicação foi construida para o desafio fullstack do Bootcamp Launchbase da Rocketseat.
+Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nunjucks e PostgreSQL**. 
+</br>Possui as funcionalidades de explorar, pesquisar e gerenciar receitas, chefs e usuários, além de contar com um sistema completo de login e recuperação de senha.
+</br>*Esta aplicação foi construida para o desafio fullstack do Bootcamp Launchbase da Rocketseat.
 
 ## 📑 **Funcionalidades**
 
