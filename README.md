@@ -55,6 +55,27 @@ $ git clone https://github.com/rbpolim/foodfy.git
 # Instalação das dependências:
 $ npm install
 
+# Crie o banco de dados e as respectivas tabelas utilizando
+# Arquivo "database.sql".
+
+# Popule o banco de dados usando o aquivo "seed.js":
+$ node seed.js
+
 # Rodar aplicação:
 $ npm start
 ```
+
+## **Acessando a Área Administrativa** 
+
+Após ter criado alguns usuários fakes com os comandos do arquivo ``seed.js``:
+ 
+* Selecione um email da tabela users;
+* Acesse a tela de login;
+* Digite o e-mail conforme cadastrado e no campo senha utilize a senha padrão "123456";
+
+Observação: A fim testar todas as funcionalidades da aplicação, escolha um usuário que possua a credencial ``is_admin`` como ``true``.
+
+
+## **Criando Novos Usuários e Recupeção de Senha**
+
+Para usar estes recursos, edite o arquivo mailer.js dentro da pasta scr/lib com suas credenciais.
