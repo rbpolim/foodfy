@@ -9,11 +9,10 @@ Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nun
 
 - Explore diversas receitas e chefs;
 - Gerencie receitas, chefs e usuários dentro da aplicação;
-- Upload de imagens para as receitas e avatares;
-- Pesquisar receitas por um filtro;
-- Banco de dados relacional com PostgreSQL;
+- Upload de imagens para as suas receitas e avatares;
+- Pesquise receitas por um filtro na página home;
 - Sistema de login e recuperação de senha;
-- Área administrativa para cada usuário cadastrado;
+- Área administrativa para os usuário cadastrado;
 
 ## 🎥 Video Walktrough
 <strong>CLIENT WEB</strong>
@@ -23,7 +22,7 @@ Foodfy é uma aplicação MVC construída com **Javascript, NodeJS, Express, Nun
 ![foodfy-video-admin-edited-mp4](https://user-images.githubusercontent.com/66570560/114241039-eb625e00-995e-11eb-860d-b7daca1c1f74.gif)
 
 ## 🔧 **Tecnologias**
-Este projeto foi desenvolvido com:
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
 ### Frontend:
 
@@ -46,7 +45,7 @@ Este projeto foi desenvolvido com:
 
 ## 💽 **Instalação**
 
-Para clonar o Foodfy é necessário você ter na sua máquina: Node.js, Git e PostgreSQL.
+Para clonar o Foodfy é necessário você já ter instalado em sua máquina o Node.js, Git e o PostgreSQL.
 
 ```
 # Clone este repositório:
@@ -65,17 +64,16 @@ $ node seed.js
 $ npm start
 ```
 
-## **Acessando a Área Administrativa** 
+*Sua aplicação estará rodando no browser em: http://localhost:3000*
+
+## 🔐 **Acesso a Área Administrativa** 
+
+![foodfy_login_area](https://user-images.githubusercontent.com/66570560/117584699-cb9c9200-b0e4-11eb-9907-79ac0cf5fca3.png)
 
 Após ter criado alguns usuários fakes com os comandos do arquivo ``seed.js``:
  
-* Selecione um email da tabela users;
-* Acesse a tela de login;
-* Digite o e-mail conforme cadastrado e no campo senha utilize a senha padrão "123456";
+* Na página home da aplicação, clique em "Minha conta";
+* Selecione um usuário/email da tabela "users";
+* Digite o e-mail cadastrado e no campo da senha utilize a senha padrão "123456";
 
 Observação: A fim testar todas as funcionalidades da aplicação, escolha um usuário que possua a credencial ``is_admin`` como ``true``.
-
-
-## **Criando Novos Usuários e Recupeção de Senha**
-
-Para usar estes recursos, edite o arquivo mailer.js dentro da pasta scr/lib com suas credenciais.
