@@ -43,15 +43,33 @@ module.exports = {
 
 			if (!req.file) {
 				return res.render('admin/chefs/create', {
-					error: 'Por favor, envie pelo menos uma foto.'
+					error: 'Por favor, necessário enviar uma foto.'
 				});
 			}
 
-			let results = await File.create({ ...req.file });
-			const fileId = results.rows[0].id;
+				// const { filename, path } = req.file;
 
-			results = await Chef.create(req.body, fileId);
-			const chefId = results.rows[0].id;
+				const result = await File.create({
+					...req.file
+				});
+
+				const file_id = result.rows[0].id
+
+				console.log(file_id)
+
+				const { name } = req.body;
+				const chef = await Chef.create({
+					name,
+					file_id,
+				});
+
+				const chefId = chef.rows[0].id
+
+				// let results = await File.create({ ...req.file });
+				// const fileId = results.rows[0].id;
+
+				// results = await Chef.create(req.body, fileId);
+				// const chefId = results.rows[0].id;
 
 			return res.redirect(`/admin/chefs/${chefId}`);
 		} catch (err) {

@@ -1,6 +1,7 @@
 {% extends "layout-admin.njk" %}
 
 {% block content %}
+
 <div class="container">
   <div class="container-title">
     <h1>Usuários</h1>
@@ -18,7 +19,7 @@
         {% if logged %}
         <form class="delete-user form" action="/admin/users?_method=DELETE" method="post">
           <input type="hidden" name="id" value="{{ user.id }}">
-          <button class="remove" type="submit">Remover</a>
+          <button class="remove" type="submit">Remover</button>
         </form>
         {% endif %}
       </div>

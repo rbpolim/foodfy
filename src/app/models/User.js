@@ -31,26 +31,17 @@ module.exports = {
 			RETURNING id
 		`;
 
-		const password = crypto.randomBytes(3).toString('hex');
-		const passwordHash = await hash(password, 8);
-
-		let isAdmin = false;
-
-		if (data.is_admin) {
-			isAdmin = true;
-		}
-
 		const values = [
 			data.name,
 			data.email,
-			passwordHash,
-			isAdmin | 'false',
+			data.password,
+			data.is_admin | 'false',
 		];
 
 		let results = await db.query(query, values);
 		results = results.rows[0];
 
-		return { results, password };
+		return { results };
 	},
 	async update(id, fields) {
 		let query = 'UPDATE users SET';

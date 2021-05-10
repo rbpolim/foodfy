@@ -5,61 +5,84 @@ const User = require('./src/app/models/User');
 const Chef = require('./src/app/models/Chef');
 const File = require('./src/app/models/File');
 
-const totalUsers = 3;
-const totalChefs = 8;
-const totalFiles = 8;
-
-let usersIds = [];
 let chefsIds = [];
-let filesIds = [];
+
+const totalChefs = 1;
 
 async function createUser() {
   const users = [];
+
   const password = await hash('123456', 8);
 
-  while (users.length < totalUsers) {
+  while (users.length < 2) {
     users.push({
       name: faker.name.firstName(),
-      email: faker.internet.email(),
+      email: faker.internet.email().toLowerCase(),
       password,
       is_admin: faker.random.boolean(),
     })
   }
 
-  const usersPromisse = users.map(user => User.create(user));
+  const usersPromise = users.map(user => User.create(user));
+  await Promise.all(usersPromise);
+}
 
-  usersIds = await Promise.all(usersPromisse);
+function createFile(num, placeholder) {
+  const files = [];
+
+  while (files.length < num) {
+    files.push({
+      filename: faker.image.image(),
+      path: `public/images/${placeholder}.png`,
+    })
+  }
+
+  return files;
 }
 
 async function createChef() {
-  let files = [];
-  let chefs = [];
+  const chefs = [];
 
-  while (files.length < 8) {
-    files.push({
-      name: faker.image.image(),
-      path: `public/images/placeholder.png`,
-    })
-  }
+  const files = createFile(totalChefs, 'chef');
+  const filePromise = files.map(file => File.create(file))
 
-  const filesPromise = files.map(file => File.create(file));
+  const fileId = await Promise.all(filePromise);
 
-  filesIds = await Promise.all(filesPromise);
 
-  while (chefs.length < 8) {
-    chefs.push({
-      name: faker.name.firstName(),
-      file_id: Math.ceil(Math.random() * 8),
-    })
-  }
+  chefs.push({
+    name: faker.name.firstName(),
+    fileId,
+  });
 
-  const chefsPromise = chefs.map(chef => Chef.create(chef));
-
-  chefsIds = await Promise.all(chefsPromise);
+  const chefPromise = chefs.map(chef => Chef.create(chef))
+  await Promise.all(chefPromise)
 }
 
+// async function createChef() {
+//   const chefs = [];
+
+//   const files = createFile(totalChefs, 'chefs')
+
+//   const chefsFilesPromise = files.map(file => File.create(file))
+//   const file_idPromise = chefsFilesPromise.rows.id
+
+//   const chefsFilesIds = await Promise.all(file_idPromise)
+
+//   console.log(chefsFilesIds)
+
+//   for (let fileIndex = 0; chefs.length < totalChefs; fileIndex++) {
+//     chefs.push({
+//       name: faker.name.firstName(),
+//       file_id: chefsFilesIds[fileIndex],
+//     })
+//   }
+
+  // const chefsPromise = chefs.map(chef => Chef.create(chef))
+  // chefsIds = await Promise.all(chefsPromise)
+// }
+
 async function init() {
-  await createUser();
+  // await createUser();
   await createChef();
 }
 

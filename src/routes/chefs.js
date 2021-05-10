@@ -1,13 +1,10 @@
 const express = require('express');
 const multer = require('../app/middlewares/multer');
 
-const routes = express.Router();
-
+const { isAdmin, onlyUsers } = require('../app/middlewares/session');
 const chefs = require('../app/controller/ChefsController');
 
-const { isAdmin, onlyUsers } = require('../app/middlewares/session');
-
-//admin/chefs'
+const routes = express.Router();
 
 // === CHEFS ROUTES === //
 routes.get('/', onlyUsers, chefs.index);

@@ -1,22 +1,19 @@
 const express = require('express');
 
-const routes = express.Router();
-
 const UserController = require('../app/controller/UserController');
 const ProfileController = require('../app/controller/ProfileController');
-
 const UserValidator = require('../app/validators/user');
 const SessionValidator = require('../app/validators/session');
+const { isAdmin, onlyUsers } = require('../app/middlewares/session');
 
-const { isAdmin, onlyUsers, batata } = require('../app/middlewares/session');
+const routes = express.Router();
 
-/// --> admin/
-
+// === RECIPES ROUTES === //
 routes.get('/users', onlyUsers, UserController.list);
 
 routes.get('/users/:id', isAdmin, UserController.show);
 routes.put('/users', UserValidator.updateToUsers, UserController.updateToUsers);
-routes.delete('/users', isAdmin, UserController.delete); // Deletar um usuário
+routes.delete('/users', isAdmin, UserController.delete);
 
 routes.get('/register', isAdmin, UserController.registerForm);
 routes.post('/register', isAdmin, UserValidator.post, UserController.post);

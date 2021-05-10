@@ -10,7 +10,7 @@ module.exports = {
 			ORDER BY chefs.id ASC
 		`);
 	},
-	create(data, fileId) {
+	create({ name, file_id }) {
 		const query = `
 			INSERT INTO chefs (
 				name,
@@ -20,8 +20,8 @@ module.exports = {
 		`;
 
 		const values = [
-			data.name,
-			fileId,
+			name,
+			file_id,
 		];
 
 		return db.query(query, values);

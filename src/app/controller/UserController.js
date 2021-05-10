@@ -1,5 +1,8 @@
-const User = require('../models/User');
+const crypto = require('crypto');
+const { hash } = require('bcryptjs');
+
 const mailer = require('../../lib/mailer');
+const User = require('../models/User');
 
 module.exports = {
 	registerForm(req, res) {
@@ -15,9 +18,11 @@ module.exports = {
 	},
 	async post(req, res) {
 		try {
-			const results = await User.create(req.body);
+			let { name, email, is_admin } = req.body;
 
-			const userPassword = results.password;
+			is_admin = is_admin || false;
+
+			const userPassword = crypto.randomBytes(3).toString('hex');
 
 			await mailer.sendMail({
 				to: req.body.email,
@@ -35,10 +40,18 @@ module.exports = {
 				`,
 			});
 
+			const password = await hash(userPassword, 8);
+
+			await User.create({
+				name,
+				email,
+				password,
+				is_admin,
+			});
+
 			return res.render('admin/users/register', {
 				success: 'Seu cadastro foi realizado com sucesso! Uma senha de acesso foi enviado para o seu e-mail.'
 			});
-
 		} catch (err) {
 			console.error(err);
 
