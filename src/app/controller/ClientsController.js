@@ -29,7 +29,7 @@ module.exports = {
 				return recipe;
 			});
 
-			const lastAdded = await Promise.all(recipePromise);
+			await Promise.all(recipePromise);
 
 			return res.render('clients/search', { recipes, filter });
 		}
