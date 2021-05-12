@@ -1,8 +1,8 @@
 const express = require('express');
-const multer = require('../app/middlewares/multer');
 
-const { isAdmin, onlyUsers } = require('../app/middlewares/session');
+const multer = require('../app/middlewares/multer');
 const chefs = require('../app/controller/ChefsController');
+const { isAdmin, onlyUsers } = require('../app/middlewares/session');
 
 const routes = express.Router();
 

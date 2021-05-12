@@ -1,6 +1,6 @@
 const express = require('express');
-const multer = require('../app/middlewares/multer');
 
+const multer = require('../app/middlewares/multer');
 const recipes = require('../app/controller/RecipesController');
 const { onlyUsers } = require('../app/middlewares/session');
 

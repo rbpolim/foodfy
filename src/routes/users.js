@@ -4,6 +4,7 @@ const UserController = require('../app/controller/UserController');
 const ProfileController = require('../app/controller/ProfileController');
 const UserValidator = require('../app/validators/user');
 const SessionValidator = require('../app/validators/session');
+
 const { isAdmin, onlyUsers } = require('../app/middlewares/session');
 
 const routes = express.Router();

@@ -8,14 +8,6 @@ function onlyUsers(req, res, next) {
   next();
 }
 
-function isLoggedRedirectToUsers(req, res, next) {
-  if (!req.session.userId) {
-    return res.redirect('/admin/users');
-  }
-
-  next();
-}
-
 async function isAdmin(req, res, next) {
   try {
     const id = req.session.userId;
@@ -39,6 +31,5 @@ async function isAdmin(req, res, next) {
 
 module.exports = {
   onlyUsers,
-  isLoggedRedirectToUsers,
   isAdmin,
 };

@@ -82,6 +82,8 @@ form.login.form .header h3 {
   width: 100%;
   max-width: 100%;
   margin-bottom: 60px;
+  margin-top: 12px;
+  resize: none;
 }
 
 .input-plus-recipe input {
