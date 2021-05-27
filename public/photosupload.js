@@ -12,7 +12,6 @@ const PhotosUpload = {
 		if (PhotosUpload.hasLimit(event)) return;
 
 		Array.from(fileList).forEach(file => {
-
 			PhotosUpload.files.push(file);
 
 			const reader = new FileReader();
